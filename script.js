@@ -16,3 +16,30 @@
     const dx=(e.clientX-cx)/cx, dy=(e.clientY-cy)/cy;
     ph.style.transform=`translate(${dx*10}px,${dy*8}px) rotateX(${-dy*5}deg) rotateY(${dx*5}deg)`;
   });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } }),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Skill bars
+  const bobs = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ e.target.querySelectorAll('.bar-fill').forEach(b=>b.style.width=b.dataset.w+'%'); bobs.unobserve(e.target); }
+  }),{threshold:.3});
+  document.querySelectorAll('.about-right').forEach(el=>bobs.observe(el));
+
+  //Loader
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+
+    // minimum loading time (in ms)
+    const minLoadTime = 2400;
+
+    setTimeout(() => {
+        loader.classList.add('hide');
+
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 600);
+
+    }, minLoadTime);
+});
