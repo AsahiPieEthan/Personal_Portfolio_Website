@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Nav -->
+
+<nav id="nav">
+
+  <div class="nav-logo"><img src="Frieren-icon.jpg" alt="My Profile" class="logo-icon">Wei Jin Pan<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#stack">Stack</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a href="https://github.com" target="_blank" class="nav-social-link" title="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+    </a>
+    <a href="https://linkedin.com" target="_blank" class="nav-social-link" title="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+    </a>
+    <a href="https://twitter.com" target="_blank" class="nav-social-link" title="Twitter / X">
+      <svg viewBox="0 0 24 24"><path d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"/></svg>
+    </a>
+  </div>
+  <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left reveal">
+      <div class="hero-eyebrow">Available for work</div>
+      <h1 class="hero-name">
+        Hello, I'm<br>
+        <span class="line2">Wei Jin Pan</span>
+      </h1>
+      <div class="hero-typed"><span id="typed-text">Web Developer</span><span class="tblink"></span></div>
+      <p class="hero-bio">I build clean, fast, and purposeful digital experiences. From pixel-perfect interfaces to solid back-end logic — I care about the craft.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-solid">View work</a>
+        <a href="mailto:weijinpan@gmail.com" class="btn btn-ghost">weijin090@gmail.com</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/AsahiPieethan" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <div class="sep"></div>
+        <a href="https://linkedin.com" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <div class="sep"></div>
+        <a href="https://twitter.com" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"/></svg>
+          Twitter
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap reveal">
+      <div class="photo-glow"></div>
+      <div class="photo-border"></div>
+      <div class="photo-border-mask"></div>
+      <div class="photo-inner" id="photoInner">
+        <div class="photo-placeholder">
+            <img src="Frieren-icon.jpg" alt="Your Name">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur bibendum. Curabitur ac ligula nec mi commodo tincidunt.</p>
+    <section id="projects" class="projects">
+
+        <h2>My Projects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur bibendum. Curabitur ac ligula nec mi commodo tincidunt.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
