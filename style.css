@@ -930,24 +930,40 @@ footer {
 .purple-glow { background: var(--purple); }
 
 /* Decorative animated lines inside preview */
-.project-preview-lines {
+.project-preview-image {
     position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding: 1.5rem 1.8rem;
+    width: 100%;
+    height: 100%;
 }
 
-.project-preview-lines span {
+.project-preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    height: 2px;
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.07);
-    transform-origin: left;
-    animation: lineIn 0.6s ease forwards;
-    opacity: 0;
+     border-radius: inherit;
+}
+
+.project-preview-images-gym {
+    position: absolute;
+    inset: 0;
+    width: 325px;
+    height: auto;
+}
+
+.project-preview-images-gym img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+}
+
+.project-preview-lines img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }
 
 .project-card:hover .project-preview-lines span {
@@ -972,7 +988,7 @@ footer {
     font-size: 0.65rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.445);
     background: rgba(6, 8, 15, 0.6);
     padding: 0.25rem 0.6rem;
     border-radius: 4px;
