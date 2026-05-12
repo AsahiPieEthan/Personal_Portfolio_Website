@@ -71,3 +71,57 @@ const bobs = new IntersectionObserver(es => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.about-right').forEach(el => bobs.observe(el));
+
+// Scroll Indicator JS
+(function () {
+    const indicator = document.getElementById('scroll-indicator');
+    let idleTimer = null;
+    let hideTimer = null;
+    const IDLE_DELAY = 3500;   // ms before it appears
+    const SHOW_DURATION = 10000; // ms it stays visible
+
+    function showIndicator() {
+      clearTimeout(hideTimer);
+      indicator.classList.add('visible');
+      hideTimer = setTimeout(() => {
+        indicator.classList.remove('visible');
+      }, SHOW_DURATION);
+    }
+
+    function scheduleShow() {
+      clearTimeout(idleTimer);
+      clearTimeout(hideTimer);
+      indicator.classList.remove('visible');
+      idleTimer = setTimeout(showIndicator, IDLE_DELAY);
+    }
+
+    // Only show when near the top (not when user already scrolled far)
+function handleScroll() {
+  const contact = document.querySelector('contact');
+  const contactTop = contact ? contact.getBoundingClientRect().top : Infinity;
+
+  // Hide permanently once footer is visible on screen
+  if (contactTop <= window.innerHeight) {
+    clearTimeout(idleTimer);
+    clearTimeout(hideTimer);
+    indicator.classList.remove('visible');
+    return;
+  }
+
+  if (window.scrollY < window.innerHeight * 0.6) {
+    scheduleShow();
+  } else {
+    clearTimeout(idleTimer);
+    clearTimeout(hideTimer);
+    indicator.classList.remove('visible');
+  }
+}
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', scheduleShow, { passive: true });
+    window.addEventListener('keydown', scheduleShow, { passive: true });
+    window.addEventListener('touchstart', scheduleShow, { passive: true });
+
+    // Kick off on page load
+    scheduleShow();
+  })();

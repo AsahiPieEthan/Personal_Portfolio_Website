@@ -1093,3 +1093,52 @@ footer {
     #projects { padding: 5rem 1.5rem; }
     .projects-grid { grid-template-columns: 1fr; }
 }
+
+ #scroll-indicator {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: 9999;
+  }
+
+  #scroll-indicator.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  #scroll-indicator-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    object-fit: cover;
+    box-shadow: 0 0 0 4px rgba(0, 255, 180, 0.15);
+  }
+
+  #scroll-indicator-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+  }
+
+  #scroll-indicator-arrow {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    animation: bounceArrow 1.4s ease-in-out infinite;
+  }
+
+  @keyframes bounceArrow {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(5px); }
+  }
