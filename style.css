@@ -1249,3 +1249,71 @@ footer {
     #mission { padding: 5rem 1.5rem; }
     .mission-inner { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; }
 }
+
+@keyframes appear {
+    from {
+  opacity: 0;
+   scale:0.5;
+    } to {
+  opacity: 1;
+    scale:1.0;
+    }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.warp {
+  animation: warp linear both;
+  animation-timeline: view();
+  animation-range: entry 13% cover 60%;
+}
+
+/* Keyframes */
+@keyframes warp {
+
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.94) skewY(2deg);
+
+    box-shadow:
+      inset 3px 3px 6px #c9cdd6,
+      inset -3px -3px 6px #e6e9ef;
+
+    filter: blur(3px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.015) skewY(-0.5deg);
+
+    /* softer, less aggressive */
+    box-shadow:
+      4px 4px 10px rgba(0, 0, 0, 0.10),
+      -4px -4px 10px rgba(255, 255, 255, 0.35);
+
+    filter: blur(0px);
+  }
+
+  /* glow starts fading */
+  85% {
+    opacity: 1;
+    transform: translateY(-1px) scale(1.005) skewY(0deg);
+
+    box-shadow:
+      2px 2px 6px rgba(0, 0, 0, 0.06),
+      -2px -2px 6px rgba(255, 255, 255, 0.2);
+  }
+
+  /* final clean state */
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) skewY(0deg);
+
+    box-shadow: none; /* fully remove glow */
+    filter: blur(0px);
+  }
+}
