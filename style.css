@@ -1142,3 +1142,110 @@ footer {
     0%, 100% { transform: translateY(0); }
     50%       { transform: translateY(5px); }
   }
+
+  
+/* ── Mission ── */
+#mission {
+    padding: 7rem 4rem;
+}
+
+.mission-inner {
+    max-width: 1000px;
+    margin: 5rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.mission-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--neon);
+    margin-bottom: 1.2rem;
+    opacity: 0.8;
+}
+
+.mission-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.mission-heading em {
+    font-style: normal;
+    color: var(--purple);
+}
+
+.mission-left p {
+    font-size: 0.9rem;
+    color: var(--muted2);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+.mission-left p strong {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.mission-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mission-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.3rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.018);
+    transition: border-color .25s, background .25s, transform .25s;
+}
+
+.mission-card:hover {
+    border-color: rgba(56, 189, 248, 0.25);
+    background: rgba(56, 189, 248, 0.04);
+    transform: translateY(-2px);
+}
+
+.mission-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mission-card-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.mission-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+}
+
+.mission-card-desc {
+    font-size: 0.82rem;
+    color: var(--muted2);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    #mission { padding: 5rem 1.5rem; }
+    .mission-inner { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; }
+}
