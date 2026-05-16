@@ -38,6 +38,21 @@ function type() {
 }
 type();
 
+// ── Hamburger menu ──
+const hbg = document.getElementById('hbg');
+hbg.addEventListener('click', () => {
+    navEl.classList.toggle('mobile-open');
+    hbg.textContent = navEl.classList.contains('mobile-open') ? '✕' : '☰';
+});
+
+// Close menu when a nav link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navEl.classList.remove('mobile-open');
+        hbg.textContent = '☰';
+    });
+});
+
 // ── Photo tilt on mouse move ──
 const ph = document.getElementById('photoInner');
 document.addEventListener('mousemove', e => {

@@ -202,6 +202,40 @@ nav.scrolled {
     transition: .3s;
 }
 
+/* Mobile nav open state */
+nav.mobile-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(6, 8, 15, 0.96);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 1.5rem;
+    gap: 1.2rem;
+}
+
+nav.mobile-open .nav-socials {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 180px); /* adjust based on your link count */
+    left: 0;
+    right: 0;
+    background: rgba(6, 8, 15, 0.96);
+    backdrop-filter: blur(18px);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    justify-content: flex-start;
+    gap: 1.2rem;
+}
+
+/* Animate hamburger into X */
+nav.mobile-open .hbg {
+    color: var(--neon);
+}
+
 /* ── Sections ── */
 section { position: relative; z-index: 2; }
 
