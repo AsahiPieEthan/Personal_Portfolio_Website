@@ -11,6 +11,9 @@ A collection of my work and personal projects, demonstrating my skills in web de
 ## 📬 Contact Me
 A dedicated section where visitors can reach out to me for opportunities, collaborations, or inquiries.
 
+## Music Loader
+Included music loader to make site exploration enjoyable, improving experience.
+
 ## ⚙️ Technologies Used
 - 🧱 HTML5  
 - 🎨 CSS3  
@@ -29,3 +32,5 @@ Developed by Ethan Asahi
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AsahiPieEthan)
 
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:weijin090@gmail.com)
+
+
