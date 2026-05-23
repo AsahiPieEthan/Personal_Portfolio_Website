@@ -429,6 +429,27 @@
     <div class="footer-copy">© 2025 — Built with care.</div>
 </footer>
 
+ <!-- 🎵 Floating Music Player -->
+<div id="musicPlayer" class="music-player">
+  <button id="toggleMusic" class="music-btn">▶</button>
+  <div>
+    <div class="music-title" id="musicTitle">✦ Lo-Fi Beats</div>
+  </div>
+  <div class="music-bars" id="musicBars">
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+  </div>
+  <div class="music-divider"></div>
+  <span class="volume-icon" id="volumeIcon">🔊</span>
+  <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+  <div class="music-divider"></div>
+  <button id="closeMusic" class="music-close">✕</button>
+  <audio id="bgMusic"></audio>
+</div>
+
 
 <script src="script.js"></script>
 
