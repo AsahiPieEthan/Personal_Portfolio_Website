@@ -140,3 +140,110 @@ function handleScroll() {
     // Kick off on page load
     scheduleShow();
   })();
+
+ // ── Floating Music Player ──
+const musicPlayer = document.getElementById('musicPlayer');
+const bgMusic = document.getElementById('bgMusic');
+const toggleBtn = document.getElementById('toggleMusic');
+const closeBtn = document.getElementById('closeMusic');
+const musicTitle = document.getElementById('musicTitle');
+
+const musicList = [{ title: 'Chill', src: 'musicplayer/lofi-music.mp3' }];
+const musicName = ['✦ Lo-Fi Beats'];
+
+let currentSong = 0;
+let isPlaying = false;
+let userInteracted = false;
+
+function loadMusic(index) {
+    bgMusic.src = musicList[index].src;
+    musicTitle.textContent = musicName[index];
+}
+
+function playMusic() {
+    const promise = bgMusic.play();
+    toggleBtn.textContent = '⏸';
+    isPlaying = true;
+    document.getElementById('musicBars').classList.remove('paused'); // add this
+    return promise;
+}
+
+function pauseMusic() {
+    bgMusic.pause();
+    toggleBtn.textContent = '▶';
+    isPlaying = false;
+    document.getElementById('musicBars').classList.add('paused'); // add this
+}
+
+// Load and start muted immediately
+loadMusic(currentSong);
+bgMusic.muted = true;
+bgMusic.play().catch(() => {});
+toggleBtn.textContent = '▶'; // still show ▶ since muted doesn't count
+
+// On first click ANYWHERE on the page, unmute and play properly
+function handleFirstInteraction() {
+    if (userInteracted) return;
+    userInteracted = true;
+    bgMusic.muted = false;
+    bgMusic.currentTime = 0;
+    playMusic();
+    document.removeEventListener('click', handleFirstInteraction);
+}
+
+document.addEventListener('click', handleFirstInteraction);
+
+// Manual toggle
+toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent double-firing with above
+    if (!userInteracted) {
+        userInteracted = true;
+        bgMusic.muted = false;
+        bgMusic.currentTime = 0;
+        document.removeEventListener('click', handleFirstInteraction);
+    }
+    if (isPlaying) {
+        pauseMusic();
+    } else {
+        playMusic();
+    }
+});
+
+bgMusic.addEventListener('ended', () => {
+    currentSong = (currentSong + 1) % musicList.length;
+    loadMusic(currentSong);
+    playMusic();
+});
+
+closeBtn.addEventListener('click', () => {
+    bgMusic.pause();
+    musicPlayer.style.display = 'none';
+});
+
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeIcon = document.getElementById('volumeIcon');
+
+// Volume change
+volumeSlider.addEventListener('input', () => {
+    bgMusic.volume = volumeSlider.value;
+    if (volumeSlider.value == 0) {
+        volumeIcon.textContent = '🔇';
+    } else if (volumeSlider.value < 0.5) {
+        volumeIcon.textContent = '🔉';
+    } else {
+        volumeIcon.textContent = '🔊';
+    }
+});
+
+// Click icon to mute/unmute
+volumeIcon.addEventListener('click', () => {
+    if (bgMusic.volume > 0) {
+        bgMusic.volume = 0;
+        volumeSlider.value = 0;
+        volumeIcon.textContent = '🔇';
+    } else {
+        bgMusic.volume = 1;
+        volumeSlider.value = 1;
+        volumeIcon.textContent = '🔊';
+    }
+});
