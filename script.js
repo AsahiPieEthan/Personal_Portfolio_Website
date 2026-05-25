@@ -53,12 +53,66 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// ── Photo tilt on mouse move ──
+
+// ── Hero Photo — 3D Tilt + Auto Idle ──
 const ph = document.getElementById('photoInner');
-document.addEventListener('mousemove', e => {
-    const cx = innerWidth / 2, cy = innerHeight / 2;
-    const dx = (e.clientX - cx) / cx, dy = (e.clientY - cy) / cy;
-    ph.style.transform = `translate(${dx * 10}px,${dy * 8}px) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg)`;
+const photoWrap = document.querySelector('.hero-photo-wrap');
+
+let mouseHasMoved = false;
+let idleAngle = 0;
+let idleRaf = null;
+
+// Auto idle float — plays until user moves mouse
+function idleLoop() {
+  idleAngle += 0.012;
+  const rx =  Math.sin(idleAngle * 0.7) * 8;   // tilt up/down
+  const ry =  Math.cos(idleAngle)       * 10;   // tilt left/right
+  const tx =  Math.cos(idleAngle * 0.5) * 6;    // subtle drift x
+  const ty =  Math.sin(idleAngle * 0.8) * 4;    // subtle drift y
+  ph.style.transition = 'none';
+  ph.style.transform = `translate(${tx}px, ${ty}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  idleRaf = requestAnimationFrame(idleLoop);
+}
+
+idleRaf = requestAnimationFrame(idleLoop);
+
+// Per-card precise tilt — takes over on mouse move
+photoWrap.addEventListener('mousemove', e => {
+  if (!mouseHasMoved) {
+    mouseHasMoved = true;
+    cancelAnimationFrame(idleRaf); // stop idle loop
+  }
+
+  const bounds = photoWrap.getBoundingClientRect();
+  const x  = e.clientX - bounds.left;
+  const y  = e.clientY - bounds.top;
+  const cx = bounds.width  / 2;
+  const cy = bounds.height / 2;
+
+  const nx = (x - cx) / cx;  // -1 to 1
+  const ny = (y - cy) / cy;
+
+  const MAX = 18;
+  ph.style.transition = 'none';
+  ph.style.transform = `
+    translate(${nx * 10}px, ${ny * 8}px)
+    rotateX(${-ny * MAX}deg)
+    rotateY(${ nx * MAX}deg)
+    scale3d(1.04, 1.04, 1.04)
+  `;
+});
+
+// Spring back on leave — restart idle
+photoWrap.addEventListener('mouseleave', () => {
+  mouseHasMoved = false;
+  ph.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+  ph.style.transform = 'translate(0,0) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+
+  // restart idle after spring-back completes
+  setTimeout(() => {
+    ph.style.transition = 'none';
+    idleRaf = requestAnimationFrame(idleLoop);
+  }, 850);
 });
 
 // ── Scroll reveal ──
