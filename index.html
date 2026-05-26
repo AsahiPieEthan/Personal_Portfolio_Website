@@ -1,458 +1,732 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link type="image/x-icon" href="title-img.png" rel="icon">
-</head>
-<body>
-
-<!-- Loader -->
-<div id="loader">
-    <div class="loader-content">
+    <link rel="stylesheet" href="style.css" />
+    <link type="image/x-icon" href="title-img.png" rel="icon" />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader">
+      <div class="loader-content">
         <h1 class="loader-title">
-            <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+          <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span
+          ><span>m</span><span>e</span>
         </h1>
-        <img src="Frieren-icon.jpg" alt="Loading Icon" class="loader-icon">
+        <img src="Frieren-icon.jpg" alt="Loading Icon" class="loader-icon" />
         <p>Loading...</p>
+      </div>
     </div>
-</div>
 
-<!-- Nav -->
-<nav id="nav">
-    <div class="nav-logo"><img src="Frieren-icon.jpg" alt="My Profile" class="logo-icon">Wei Jin Pan<span>.</span></div>
-    <ul class="nav-links">
+    <!-- Nav -->
+    <nav id="nav">
+      <div class="nav-logo">
+        <img src="Frieren-icon.jpg" alt="My Profile" class="logo-icon" />Wei Jin
+        Pan<span>.</span>
+      </div>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#contact">Contact</a></li>
-       
-    </ul>
-    <div class="nav-socials">
-        <a href="https://github.com/AsahiPieethan" target="_blank" class="nav-social-link" title="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </ul>
+      <div class="nav-socials">
+        <a
+          href="https://github.com/AsahiPieethan"
+          target="_blank"
+          class="nav-social-link"
+          title="GitHub"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+            />
+          </svg>
         </a>
-        <a href="https://linkedin.com" target="_blank" class="nav-social-link" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          class="nav-social-link"
+          title="LinkedIn"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"
+            />
+          </svg>
         </a>
-        <a href="https://twitter.com" target="_blank" class="nav-social-link" title="Twitter / X">
-            <svg viewBox="0 0 24 24"><path d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"/></svg>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="nav-social-link"
+          title="Twitter / X"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"
+            />
+          </svg>
         </a>
-    </div>
-    <div class="hbg" id="hbg">☰</div>
-</nav>
+      </div>
+      <div class="hbg" id="hbg">☰</div>
+    </nav>
 
-<!-- Hero -->
-<section id="hero">
-    <div class="hero-inner">
+    <!-- Hero -->
+    <section id="hero">
+      <canvas id="bg"></canvas>
+      <div class="hero-inner">
         <div class="hero-left reveal">
-            <div class="hero-eyebrow">Available for work</div>
-            <h1 class="hero-name">
-                Hello, I'm<br>
-                <span class="line2">Wei Jin Pan</span>
-            </h1>
-            <div class="hero-typed"><span id="typed-text">Web Developer</span><span class="tblink"></span></div>
-            <p class="hero-bio">I build clean, fast, and purposeful digital experiences. From pixel-perfect interfaces to solid back-end logic — I care about the craft.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-solid">View work</a>
-                <a href="mailto:weijin090@gmail.com" class="btn btn-ghost">weijin090@gmail.com</a>
-            </div>
-            <div class="hero-socials">
-                <a href="https://github.com/AsahiPieethan" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-                    GitHub
-                </a>
-                <div class="sep"></div>
-                <a href="https://linkedin.com" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                    LinkedIn
-                </a>
-                <div class="sep"></div>
-                <a href="https://twitter.com" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"/></svg>
-                    Twitter
-                </a>
-            </div>
+          <div class="hero-eyebrow">Available for work</div>
+          <h1 class="hero-name">
+            Hello, I'm<br />
+            <span class="line2">Wei Jin Pan</span>
+          </h1>
+          <div class="hero-typed">
+            <span id="typed-text">Web Developer</span
+            ><span class="tblink"></span>
+          </div>
+          <p class="hero-bio">
+            I build clean, fast, and purposeful digital experiences. From
+            pixel-perfect interfaces to solid back-end logic — I care about the
+            craft.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-solid">View work</a>
+            <a href="mailto:weijin090@gmail.com" class="btn btn-ghost"
+              >weijin090@gmail.com</a
+            >
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/AsahiPieethan" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+                />
+              </svg>
+              GitHub
+            </a>
+            <div class="sep"></div>
+            <a href="https://linkedin.com" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"
+                />
+              </svg>
+              LinkedIn
+            </a>
+            <div class="sep"></div>
+            <a href="https://twitter.com" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"
+                />
+              </svg>
+              Twitter
+            </a>
+          </div>
         </div>
         <div class="hero-photo-wrap reveal">
-            <div class="photo-glow"></div>
-            <div class="photo-border"></div>
-            <div class="photo-border-mask"></div>
-            <div class="photo-inner" id="photoInner">
-                <div class="photo-placeholder">
-                    <img src="anime-eyes-gif-pfp-3.gif" alt="My Profile">
-                </div>
+          <div class="photo-glow"></div>
+          <div class="photo-border"></div>
+          <div class="photo-border-mask"></div>
+          <div class="photo-inner" id="photoInner">
+            <div class="photo-placeholder">
+              <img src="anime-eyes-gif-pfp-3.gif" alt="My Profile" />
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- About -->
-<section id="about">
-    <div class="divider reveal"></div>
-    <div class="about-inner">
+    <!-- About -->
+    <section id="about">
+      <div class="divider reveal"></div>
+      <div class="about-inner">
         <div class="about-body reveal">
-            <div class="about-label">About</div>
-            <h2 class="about-heading">Developer &<br><em>Problem Solver</em></h2>
-            <p>I'm a <strong>full-stack developer</strong> based in Malaysia who enjoys building things from the ground up. I care about writing clean code, thoughtful UI, and shipping products that actually work for real people.</p>
-            <p>My approach blends technical precision with a designer's eye — I think about performance, accessibility, and that one tiny hover animation that makes someone smile. Outside of code I enjoy design, music, and getting lost in a good side project.</p>
-            <p>Currently <strong>open to freelance work</strong> and full-time opportunities. If you have an interesting project, let's talk.</p>
-            <div class="about-tags">
-                <span class="about-tag">React</span>
-                <span class="about-tag">Javascript</span>
-                <span class="about-tag">Node.js</span>
-                <span class="about-tag">Tailwind CSS</span>
-                <span class="about-tag">C#</span>
-                <span class="about-tag">C++</span>
-                <span class="about-tag">PostgreSQL</span>
-                <span class="about-tag">REST APIs</span>
-            </div>
+          <div class="about-label">About</div>
+          <h2 class="about-heading">
+            Developer &<br /><em>Problem Solver</em>
+          </h2>
+          <p>
+            I'm a <strong>full-stack developer</strong> based in Malaysia who
+            enjoys building things from the ground up. I care about writing
+            clean code, thoughtful UI, and shipping products that actually work
+            for real people.
+          </p>
+          <p>
+            My approach blends technical precision with a designer's eye — I
+            think about performance, accessibility, and that one tiny hover
+            animation that makes someone smile. Outside of code I enjoy design,
+            music, and getting lost in a good side project.
+          </p>
+          <p>
+            Currently <strong>open to freelance work</strong> and full-time
+            opportunities. If you have an interesting project, let's talk.
+          </p>
+          <div class="about-tags">
+            <span class="about-tag">React</span>
+            <span class="about-tag">Javascript</span>
+            <span class="about-tag">Node.js</span>
+            <span class="about-tag">Tailwind CSS</span>
+            <span class="about-tag">C#</span>
+            <span class="about-tag">C++</span>
+            <span class="about-tag">PostgreSQL</span>
+            <span class="about-tag">REST APIs</span>
+          </div>
         </div>
         <div class="about-right reveal">
-            <div class="stats-row">
-                <div class="stat">
-                    <div class="stat-n">2<span>+</span></div>
-                    <div class="stat-l">Years exp.</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">15<span>+</span></div>
-                    <div class="stat-l">Projects</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">10<span>+</span></div>
-                    <div class="stat-l">Clients</div>
-                </div>
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-n">2<span>+</span></div>
+              <div class="stat-l">Years exp.</div>
             </div>
-            <div class="bars">
-                <div class="bar-row">
-                    <div class="bar-meta"><span>Frontend</span><span>92%</span></div>
-                    <div class="bar-track"><div class="bar-fill neon" data-w="92"></div></div>
-                </div>
-                <div class="bar-row">
-                    <div class="bar-meta"><span>Backend</span><span>70%</span></div>
-                    <div class="bar-track"><div class="bar-fill purple" data-w="78"></div></div>
-                </div>
-                <div class="bar-row">
-                    <div class="bar-meta"><span>UI / UX</span><span>85%</span></div>
-                    <div class="bar-track"><div class="bar-fill neon" data-w="85"></div></div>
-                </div>
-                <div class="bar-row">
-                    <div class="bar-meta"><span>DevOps</span><span>60%</span></div>
-                    <div class="bar-track"><div class="bar-fill purple" data-w="60"></div></div>
-                </div>
+            <div class="stat">
+              <div class="stat-n">15<span>+</span></div>
+              <div class="stat-l">Projects</div>
             </div>
+            <div class="stat">
+              <div class="stat-n">10<span>+</span></div>
+              <div class="stat-l">Clients</div>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="bar-row">
+              <div class="bar-meta"><span>Frontend</span><span>92%</span></div>
+              <div class="bar-track">
+                <div class="bar-fill neon" data-w="92"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-meta"><span>Backend</span><span>70%</span></div>
+              <div class="bar-track">
+                <div class="bar-fill purple" data-w="78"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-meta"><span>UI / UX</span><span>85%</span></div>
+              <div class="bar-track">
+                <div class="bar-fill neon" data-w="85"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-meta"><span>DevOps</span><span>60%</span></div>
+              <div class="bar-track">
+                <div class="bar-fill purple" data-w="60"></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Projects -->
-<section id="projects">
-    <div class="divider reveal"></div>
-    <div class="projects-inner">
+    <!-- Projects -->
+    <section id="projects">
+      <div class="divider reveal"></div>
+      <div class="projects-inner">
         <div class="projects-header reveal">
-            <div class="projects-label">Projects</div>
-            <h2 class="projects-heading">Things I've<br><em>Built</em></h2>
-            <p class="projects-sub">A selection of projects I'm proud of. Each one taught me something new.</p>
+          <div class="projects-label">Projects</div>
+          <h2 class="projects-heading">Things I've<br /><em>Built</em></h2>
+          <p class="projects-sub">
+            A selection of projects I'm proud of. Each one taught me something
+            new.
+          </p>
         </div>
         <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card warp">
+            <div class="project-card-top">
+              <div class="project-preview">
+                <div class="project-preview-glow neon-glow"></div>
+                <div class="project-preview-images-gym">
+                  <img src="Gym_First_Project.jpg" alt="Project Image" />
+                </div>
+                <div class="project-preview-label">
+                  Gym Management System/ Gym API
+                </div>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">Javascript</span>
+                <span class="project-tag">SSMS</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+              </div>
+              <h3 class="project-title">Gym Management System</h3>
+              <p class="project-desc">
+                A comprehensive gym management system built with C# and
+                JavaScript, featuring member management, class scheduling, and
+                inventory tracking.
+              </p>
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                  Live
+                  <svg viewBox="0 0 24 24">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+                <a href="#" class="project-link ghost" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
 
-            <!-- Project 1 -->
-            <article class="project-card warp">
-                <div class="project-card-top">
-                    <div class="project-preview">
-                        <div class="project-preview-glow neon-glow"></div>
-                        <div class="project-preview-images-gym">
-                            <img src="Gym_First_Project.jpg" alt="Project Image">
-                        </div>
-                        <div class="project-preview-label">Gym Management System/ Gym API</div>
-                    </div>
+          <!-- Project 2 -->
+          <article class="project-card warp">
+            <div class="project-card-top">
+              <div class="project-preview purple-theme">
+                <div class="project-preview-glow purple-glow"></div>
+                <div class="project-preview-image">
+                  <img src="HQ_Project2.png" alt="Project Image" />
                 </div>
-                <div class="project-card-body">
-                    <div class="project-meta">
-                        <span class="project-tag">C#</span>
-                        <span class="project-tag">Javascript</span>
-                        <span class="project-tag">SSMS</span>
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                    </div>
-                    <h3 class="project-title">Gym Management System</h3>
-                    <p class="project-desc">A comprehensive gym management system built with C# and JavaScript, featuring member management, class scheduling, and inventory tracking.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link" target="_blank">
-                            Live
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </a>
-                        <a href="#" class="project-link ghost" target="_blank">
-                            <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-                            Code
-                        </a>
-                    </div>
-                </div>
-            </article>
+                <div class="project-preview-label">Restaurant Website</div>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+              </div>
+              <h3 class="project-title">Restaurant Website</h3>
+              <p class="project-desc">
+                A modern restaurant website with online ordering, menu
+                management, and reservation system. Built with a focus on user
+                experience and responsive design.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://hq-white-coffee.vercel.app"
+                  class="project-link"
+                  target="_blank"
+                >
+                  Live
+                  <svg viewBox="0 0 24 24">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+                <a href="#" class="project-link ghost" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
 
-            <!-- Project 2 -->
-            <article class="project-card warp">
-                <div class="project-card-top">
-                    <div class="project-preview purple-theme">
-                        <div class="project-preview-glow purple-glow"></div>
-                        <div class="project-preview-image">
-                            <img src="HQ_Project2.png" alt="Project Image">
-                        </div>
-                        <div class="project-preview-label">Restaurant Website</div>
-                    </div>
+          <!-- Project 3 -->
+          <article class="project-card warp">
+            <div class="project-card-top">
+              <div class="project-preview">
+                <div class="project-preview-glow neon-glow"></div>
+                <div class="project-preview-image">
+                  <img src="Frieren_project.png" alt="Project Image" />
                 </div>
-                <div class="project-card-body">
-                    <div class="project-meta">
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                    </div>
-                    <h3 class="project-title">Restaurant Website</h3>
-                    <p class="project-desc">A modern restaurant website with online ordering, menu management, and reservation system. Built with a focus on user experience and responsive design.</p>
-                    <div class="project-links">
-                        <a href="https://hq-white-coffee.vercel.app" class="project-link" target="_blank">
-                            Live
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </a>
-                        <a href="#" class="project-link ghost" target="_blank">
-                            <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-                            Code
-                        </a>
-                    </div>
-                </div>
-            </article>
+                <div class="project-preview-label">Frieren Website</div>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag">React Native</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+              </div>
+              <h3 class="project-title">Frieren Website</h3>
+              <p class="project-desc">
+                A fan-made website for the anime "Frieren: Beyond Journey's End"
+                with character information, episode guides, and community
+                discussions.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://frieren-website-personal.vercel.app"
+                  class="project-link"
+                  target="_blank"
+                >
+                  Live
+                  <svg viewBox="0 0 24 24">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+                <a href="#" class="project-link ghost" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
 
-            <!-- Project 3 -->
-            <article class="project-card warp">
-                <div class="project-card-top">
-                    <div class="project-preview">
-                        <div class="project-preview-glow neon-glow"></div>
-                        <div class="project-preview-image">
-                            <img src="Frieren_project.png" alt="Project Image">
-                        </div>
-                        <div class="project-preview-label">Frieren Website</div>
-                    </div>
+          <!-- Project 4 -->
+          <article class="project-card warp">
+            <div class="project-card-top">
+              <div class="project-preview purple-theme">
+                <div class="project-preview-glow purple-glow"></div>
+                <div class="project-preview-lines">
+                  <span></span><span></span><span></span><span></span
+                  ><span></span>
                 </div>
-                <div class="project-card-body">
-                    <div class="project-meta">
-                        <span class="project-tag">React Native</span>
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                    </div>
-                    <h3 class="project-title">Frieren Website</h3>
-                    <p class="project-desc">A fan-made website for the anime "Frieren: Beyond Journey's End" with character information, episode guides, and community discussions.</p>
-                    <div class="project-links">
-                        <a href="https://frieren-website-personal.vercel.app" class="project-link" target="_blank">
-                            Live
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </a>
-                        <a href="#" class="project-link ghost" target="_blank">
-                            <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-                            Code
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="project-card warp">
-                <div class="project-card-top">
-                    <div class="project-preview purple-theme">
-                        <div class="project-preview-glow purple-glow"></div>
-                        <div class="project-preview-lines">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                        <div class="project-preview-label">AI Tool</div>
-                    </div>
-                </div>
-                <div class="project-card-body">
-                    <div class="project-meta">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">FastAPI</span>
-                        <span class="project-tag">OpenAI</span>
-                    </div>
-                    <h3 class="project-title">DocuMind</h3>
-                    <p class="project-desc">An AI-powered document summariser and Q&A tool. Upload any PDF and ask questions in plain English. Built with RAG and vector search under the hood.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link" target="_blank">
-                            Live
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </a>
-                        <a href="#" class="project-link ghost" target="_blank">
-                            <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-                            Code
-                        </a>
-                    </div>
-                </div>
-            </article>
-
+                <div class="project-preview-label">AI Tool</div>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">OpenAI</span>
+              </div>
+              <h3 class="project-title">DocuMind</h3>
+              <p class="project-desc">
+                An AI-powered document summariser and Q&A tool. Upload any PDF
+                and ask questions in plain English. Built with RAG and vector
+                search under the hood.
+              </p>
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                  Live
+                  <svg viewBox="0 0 24 24">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+                <a href="#" class="project-link ghost" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Mission -->
-<section id="mission">
-    <div class="divider reveal"></div>
-    <div class="mission-inner">
+    <!-- Mission -->
+    <section id="mission">
+      <div class="divider reveal"></div>
+      <div class="mission-inner">
         <div class="mission-left reveal">
-            <div class="mission-label">Mission</div>
-            <h2 class="mission-heading">Building Toward<br><em>Something Greater</em></h2>
-            <p>I believe the most meaningful work happens at the intersection of <strong>technology and human potential</strong>. Every project I take on, every problem I solve, is a step toward a larger goal — to become a developer who doesn't just use AI, but shapes it.</p>
-            <p>I'm actively investing in my understanding of <strong>machine learning, AI systems, and intelligent application design</strong>. Not as a trend to chase, but as a craft to master — with the same care I bring to every line of code I write today.</p>
-            <p>The future I'm working toward is one where I can build tools that <strong>genuinely help people think, create, and grow</strong>. That's the north star I'm coding toward.</p>
+          <div class="mission-label">Mission</div>
+          <h2 class="mission-heading">
+            Building Toward<br /><em>Something Greater</em>
+          </h2>
+          <p>
+            I believe the most meaningful work happens at the intersection of
+            <strong>technology and human potential</strong>. Every project I
+            take on, every problem I solve, is a step toward a larger goal — to
+            become a developer who doesn't just use AI, but shapes it.
+          </p>
+          <p>
+            I'm actively investing in my understanding of
+            <strong
+              >machine learning, AI systems, and intelligent application
+              design</strong
+            >. Not as a trend to chase, but as a craft to master — with the same
+            care I bring to every line of code I write today.
+          </p>
+          <p>
+            The future I'm working toward is one where I can build tools that
+            <strong>genuinely help people think, create, and grow</strong>.
+            That's the north star I'm coding toward.
+          </p>
         </div>
         <div class="mission-right reveal">
-            <div class="mission-card block">
-                <div class="mission-card-icon neon-bg">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 13H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 19.93z"/></svg>
-                </div>
-                <div class="mission-card-text">
-                    <div class="mission-card-title">Purpose-Driven</div>
-                    <div class="mission-card-desc">Every skill I learn is intentional — aligned with where I want to go, not just what's trending.</div>
-                </div>
+          <div class="mission-card block">
+            <div class="mission-card-icon neon-bg">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 13H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 19.93z"
+                />
+              </svg>
             </div>
-            <div class="mission-card block">
-                <div class="mission-card-icon purple-bg">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                </div>
-                <div class="mission-card-text">
-                    <div class="mission-card-title">AI-First Mindset</div>
-                    <div class="mission-card-desc">I'm not waiting to "get into AI." I'm building toward it daily — through projects, research, and curiosity.</div>
-                </div>
+            <div class="mission-card-text">
+              <div class="mission-card-title">Purpose-Driven</div>
+              <div class="mission-card-desc">
+                Every skill I learn is intentional — aligned with where I want
+                to go, not just what's trending.
+              </div>
             </div>
-            <div class="mission-card block">
-                <div class="mission-card-icon neon-bg">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                </div>
-                <div class="mission-card-text">
-                    <div class="mission-card-title">Lifelong Learner</div>
-                    <div class="mission-card-desc">Growth isn't a phase — it's the whole point. I invest in knowledge the same way others invest in assets.</div>
-                </div>
+          </div>
+          <div class="mission-card block">
+            <div class="mission-card-icon purple-bg">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+              </svg>
             </div>
+            <div class="mission-card-text">
+              <div class="mission-card-title">AI-First Mindset</div>
+              <div class="mission-card-desc">
+                I'm not waiting to "get into AI." I'm building toward it daily —
+                through projects, research, and curiosity.
+              </div>
+            </div>
+          </div>
+          <div class="mission-card block">
+            <div class="mission-card-icon neon-bg">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <div class="mission-card-text">
+              <div class="mission-card-title">Lifelong Learner</div>
+              <div class="mission-card-desc">
+                Growth isn't a phase — it's the whole point. I invest in
+                knowledge the same way others invest in assets.
+              </div>
+            </div>
+          </div>
+          <div class="mission-card block">
+            <div class="mission-card-icon neon-bg">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <!-- brain left lobe -->
+                <path
+                  d="M12 5c-1-.8-2.5-1-3.8-.4A4 4 0 0 0 6 8c-1.2.3-2 1.3-2 2.5 0 .8.3 1.5.8 2C4.3 13 4 13.7 4 14.5A2.5 2.5 0 0 0 6.5 17H12"
+                />
+                <!-- brain right lobe -->
+                <path
+                  d="M12 5c1-.8 2.5-1 3.8-.4A4 4 0 0 1 18 8c1.2.3 2 1.3 2 2.5 0 .8-.3 1.5-.8 2 .5.5.8 1.2.8 2A2.5 2.5 0 0 1 17.5 17H12"
+                />
+                <!-- center divide -->
+                <line x1="12" y1="5" x2="12" y2="17" />
+                <!-- communication signal arcs -->
+                <path d="M9 10.5c.5-.5 1.5-.5 2 0" />
+                <path d="M13 10.5c.5-.5 1.5-.5 2 0" />
+                <!-- speech/signal dot -->
+                <circle
+                  cx="12"
+                  cy="19.5"
+                  r="0.75"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <!-- connection line to dot -->
+                <line x1="12" y1="17" x2="12" y2="18.75" />
+              </svg>
+            </div>
+            <div class="mission-card-text">
+              <div class="mission-card-title">Articulation & Communication</div>
+              <div class="mission-card-desc">
+                I believe in the power of clear communication to drive
+                understanding and collaboration, as it empowers a person to
+                express their ideas effectively.
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-<!-- Contact -->
-<section id="contact">
-    <div class="divider reveal"></div>
-    <div class="contact-inner">
+    <!-- Contact -->
+    <section id="contact">
+      <div class="divider reveal"></div>
+      <div class="contact-inner">
         <div class="contact-top reveal">
-            <div class="availability-badge">
-                <span class="availability-dot"></span>
-                Available for new projects
-            </div>
-            <div class="contact-label">Contact</div>
-            <h2 class="contact-heading">Let's build something<br><em>great together</em></h2>
-            <p class="contact-sub">Whether you have a project in mind, a role to fill, or just want to say hi — my inbox is always open. I typically respond within 24 hours.</p>
+          <div class="availability-badge">
+            <span class="availability-dot"></span>
+            Available for new projects
+          </div>
+          <div class="contact-label">Contact</div>
+          <h2 class="contact-heading">
+            Let's build something<br /><em>great together</em>
+          </h2>
+          <p class="contact-sub">
+            Whether you have a project in mind, a role to fill, or just want to
+            say hi — my inbox is always open. I typically respond within 24
+            hours.
+          </p>
         </div>
         <div class="contact-grid reveal">
+          <!-- Email -->
+          <a href="mailto:weijin090@gmail.com" class="contact-card">
+            <div class="contact-card-icon neon-bg">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">Email</div>
+              <div class="contact-card-value">weijin090@gmail.com</div>
+            </div>
+            <div class="contact-card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
 
-            <!-- Email -->
-            <a href="mailto:weijin090@gmail.com" class="contact-card">
-                <div class="contact-card-icon neon-bg">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </div>
-                <div class="contact-card-body">
-                    <div class="contact-card-label">Email</div>
-                    <div class="contact-card-value">weijin090@gmail.com</div>
-                </div>
-                <div class="contact-card-arrow">
-                    <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-            </a>
+          <!-- LinkedIn -->
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            class="contact-card purple-hover"
+          >
+            <div class="contact-card-icon purple-bg">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"
+                />
+              </svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">LinkedIn</div>
+              <div class="contact-card-value">/in/weijinpan</div>
+            </div>
+            <div class="contact-card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
 
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com" target="_blank" class="contact-card purple-hover">
-                <div class="contact-card-icon purple-bg">
-                    <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                </div>
-                <div class="contact-card-body">
-                    <div class="contact-card-label">LinkedIn</div>
-                    <div class="contact-card-value">/in/weijinpan</div>
-                </div>
-                <div class="contact-card-arrow">
-                    <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-            </a>
+          <!-- GitHub -->
+          <a
+            href="https://github.com/AsahiPieethan"
+            target="_blank"
+            class="contact-card"
+          >
+            <div class="contact-card-icon neon-bg">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
+                />
+              </svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">GitHub</div>
+              <div class="contact-card-value">AsahiPieethan</div>
+            </div>
+            <div class="contact-card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
 
-            <!-- GitHub -->
-            <a href="https://github.com/AsahiPieethan" target="_blank" class="contact-card">
-                <div class="contact-card-icon neon-bg">
-                    <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.05c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.94 10.94 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-                </div>
-                <div class="contact-card-body">
-                    <div class="contact-card-label">GitHub</div>
-                    <div class="contact-card-value">AsahiPieethan</div>
-                </div>
-                <div class="contact-card-arrow">
-                    <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-            </a>
-
-            <!-- Twitter / X -->
-            <a href="https://twitter.com" target="_blank" class="contact-card purple-hover">
-                <div class="contact-card-icon purple-bg">
-                    <svg viewBox="0 0 24 24"><path d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"/></svg>
-                </div>
-                <div class="contact-card-body">
-                    <div class="contact-card-label">Twitter / X</div>
-                    <div class="contact-card-value">@weijinpan</div>
-                </div>
-                <div class="contact-card-arrow">
-                    <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-            </a>
-
+          <!-- Twitter / X -->
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            class="contact-card purple-hover"
+          >
+            <div class="contact-card-icon purple-bg">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.24 2h3.48l-7.6 8.69L23 22h-7l-5.48-7.17L4.22 22H.73l8.13-9.3L1 2h7.17l4.95 6.48L18.24 2zm-1.22 18h1.93L7.07 4H4.99l12.03 16z"
+                />
+              </svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">Twitter / X</div>
+              <div class="contact-card-value">@weijinpan</div>
+            </div>
+            <div class="contact-card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
         </div>
+      </div>
+    </section>
+
+    <!-- Scroll Indicator -->
+    <div id="scroll-indicator">
+      <img src="Point-down.gif" alt="Scroll hint" id="scroll-indicator-img" />
+      <div id="scroll-indicator-text">Scroll down</div>
+      <div id="scroll-indicator-arrow">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <polyline points="19 12 12 19 5 12" />
+        </svg>
+      </div>
     </div>
-</section>
 
-<!-- Scroll Indicator -->
-<div id="scroll-indicator">
-  <img src="Point-down.gif" alt="Scroll hint" id="scroll-indicator-img">
-  <div id="scroll-indicator-text">Scroll down</div>
-  <div id="scroll-indicator-arrow">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="12" y1="5" x2="12" y2="19"/>
-      <polyline points="19 12 12 19 5 12"/>
-    </svg>
-  </div>
-</div>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-name">Wei Jin Pan<span>.</span></div>
+      <div class="footer-copy">© 2025 — Built with care.</div>
+    </footer>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-name">Wei Jin Pan<span>.</span></div>
-    <div class="footer-copy">© 2025 — Built with care.</div>
-</footer>
+    <!-- 🎵 Floating Music Player -->
+    <div id="musicPlayer" class="music-player">
+      <button id="toggleMusic" class="music-btn">▶</button>
+      <div>
+        <div class="music-title" id="musicTitle">✦ Lo-Fi Beats</div>
+      </div>
+      <div class="music-bars" id="musicBars">
+        <div class="music-bar"></div>
+        <div class="music-bar"></div>
+        <div class="music-bar"></div>
+        <div class="music-bar"></div>
+        <div class="music-bar"></div>
+      </div>
+      <div class="music-divider"></div>
+      <span class="volume-icon" id="volumeIcon">🔊</span>
+      <input
+        type="range"
+        id="volumeSlider"
+        class="volume-slider"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+      <div class="music-divider"></div>
+      <button id="closeMusic" class="music-close">✕</button>
+      <audio id="bgMusic"></audio>
+    </div>
 
- <!-- 🎵 Floating Music Player -->
-<div id="musicPlayer" class="music-player">
-  <button id="toggleMusic" class="music-btn">▶</button>
-  <div>
-    <div class="music-title" id="musicTitle">✦ Lo-Fi Beats</div>
-  </div>
-  <div class="music-bars" id="musicBars">
-    <div class="music-bar"></div>
-    <div class="music-bar"></div>
-    <div class="music-bar"></div>
-    <div class="music-bar"></div>
-    <div class="music-bar"></div>
-  </div>
-  <div class="music-divider"></div>
-  <span class="volume-icon" id="volumeIcon">🔊</span>
-  <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1">
-  <div class="music-divider"></div>
-  <button id="closeMusic" class="music-close">✕</button>
-  <audio id="bgMusic"></audio>
-</div>
-
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

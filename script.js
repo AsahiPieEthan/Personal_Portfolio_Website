@@ -62,58 +62,47 @@ let mouseHasMoved = false;
 let idleAngle = 0;
 let idleRaf = null;
 
-// Auto idle float — plays until user moves mouse
 function idleLoop() {
-  idleAngle += 0.012;
-  const rx =  Math.sin(idleAngle * 0.7) * 8;   // tilt up/down
-  const ry =  Math.cos(idleAngle)       * 10;   // tilt left/right
-  const tx =  Math.cos(idleAngle * 0.5) * 6;    // subtle drift x
-  const ty =  Math.sin(idleAngle * 0.8) * 4;    // subtle drift y
-  ph.style.transition = 'none';
-  ph.style.transform = `translate(${tx}px, ${ty}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-  idleRaf = requestAnimationFrame(idleLoop);
+    idleAngle += 0.012;
+    const rx = Math.sin(idleAngle * 0.7) * 6;
+    const ry = Math.cos(idleAngle) * 8;
+    ph.style.transition = 'none';
+    ph.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+    idleRaf = requestAnimationFrame(idleLoop);
 }
 
 idleRaf = requestAnimationFrame(idleLoop);
 
-// Per-card precise tilt — takes over on mouse move
 photoWrap.addEventListener('mousemove', e => {
-  if (!mouseHasMoved) {
-    mouseHasMoved = true;
-    cancelAnimationFrame(idleRaf); // stop idle loop
-  }
+    if (!mouseHasMoved) {
+        mouseHasMoved = true;
+        cancelAnimationFrame(idleRaf);
+    }
 
-  const bounds = photoWrap.getBoundingClientRect();
-  const x  = e.clientX - bounds.left;
-  const y  = e.clientY - bounds.top;
-  const cx = bounds.width  / 2;
-  const cy = bounds.height / 2;
+    const bounds = photoWrap.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+    const y = e.clientY - bounds.top;
+    const cx = bounds.width / 2;
+    const cy = bounds.height / 2;
+    const nx = (x - cx) / cx;
+    const ny = (y - cy) / cy;
+    const MAX = 22;
 
-  const nx = (x - cx) / cx;  // -1 to 1
-  const ny = (y - cy) / cy;
-
-  const MAX = 18;
-  ph.style.transition = 'none';
-  ph.style.transform = `
-    translate(${nx * 10}px, ${ny * 8}px)
-    rotateX(${-ny * MAX}deg)
-    rotateY(${ nx * MAX}deg)
-    scale3d(1.04, 1.04, 1.04)
-  `;
-});
-
-// Spring back on leave — restart idle
-photoWrap.addEventListener('mouseleave', () => {
-  mouseHasMoved = false;
-  ph.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-  ph.style.transform = 'translate(0,0) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
-
-  // restart idle after spring-back completes
-  setTimeout(() => {
     ph.style.transition = 'none';
-    idleRaf = requestAnimationFrame(idleLoop);
-  }, 850);
+    ph.style.transform = `rotateX(${-ny * MAX}deg) rotateY(${nx * MAX}deg) scale3d(1.04, 1.04, 1.04)`;
 });
+
+photoWrap.addEventListener('mouseleave', () => {
+    mouseHasMoved = false;
+    ph.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    ph.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+
+    setTimeout(() => {
+        ph.style.transition = 'none';
+        idleRaf = requestAnimationFrame(idleLoop);
+    }, 850);
+});
+
 
 // ── Scroll reveal ──
 const obs = new IntersectionObserver(es => {
@@ -301,3 +290,79 @@ volumeIcon.addEventListener('click', () => {
         volumeIcon.textContent = '🔊';
     }
 });
+
+//Canvas 
+
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+// size to hero section, not window
+const hero = document.getElementById("hero");
+canvas.width = hero.offsetWidth;
+canvas.height = hero.offsetHeight;
+
+const gridSize = 24;
+const cols = Math.floor(canvas.width / gridSize);
+const rows = Math.floor(canvas.height / gridSize);
+
+let snake = [{ x: 10, y: 10 }];
+let dir = { x: 1, y: 0 };
+
+function glowColor(i) {
+    const colors = ["#4f8cff", "#7c4dff", "#6ee7ff"];
+    return colors[i % colors.length];
+}
+
+function step() {
+    const head = snake[snake.length - 1];
+    let next = {
+        x: (head.x + dir.x + cols) % cols,
+        y: (head.y + dir.y + rows) % rows
+    };
+    snake.push(next);
+    if (snake.length > 18) snake.shift();
+}
+
+function drawGrid() {
+    ctx.strokeStyle = "rgba(255,255,255,0.03)";
+    ctx.lineWidth = 1;
+    for (let x = 0; x < cols; x++) {
+        for (let y = 0; y < rows; y++) {
+            ctx.strokeRect(x * gridSize, y * gridSize, gridSize, gridSize);
+        }
+    }
+}
+
+function drawSnake() {
+    snake.forEach((p, i) => {
+        const x = p.x * gridSize;
+        const y = p.y * gridSize;
+        ctx.fillStyle = glowColor(i);
+        ctx.shadowBlur = 12;          // reduced from 20
+        ctx.shadowColor = glowColor(i);
+        ctx.globalAlpha = 0.5;        // extra dimming per segment
+        ctx.fillRect(x, y, gridSize, gridSize);
+    });
+    ctx.shadowBlur = 0;
+    ctx.globalAlpha = 1;
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrid();
+    step();
+    drawSnake();
+    requestAnimationFrame(animate);
+}
+
+setInterval(() => {
+    const dirs = [
+        { x: 1, y: 0 },
+        { x: -1, y: 0 },
+        { x: 0, y: 1 },
+        { x: 0, y: -1 }
+    ];
+    dir = dirs[Math.floor(Math.random() * dirs.length)];
+}, 500);
+
+animate();

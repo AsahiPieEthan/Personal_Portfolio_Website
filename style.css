@@ -404,26 +404,28 @@ section { position: relative; z-index: 2; }
 }
 
 /* ── Profile Pic ── */
+/* ── Profile Pic ── */
 .hero-photo-wrap {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 320px;
+    height: 320px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 800px;
 }
 
 .photo-glow {
     position: absolute;
-    inset: -40px;
-    border-radius: 50%;
+    inset: -30px;
     background: radial-gradient(circle,
-        rgba(56, 189, 248, 0.18) 0%,
-        rgba(168, 85, 247, 0.14) 35%,
-        transparent 70%);
-    filter: blur(30px);
+        rgba(56, 189, 248, 0.25) 0%,
+        rgba(168, 85, 247, 0.12) 50%,
+        transparent 75%);
+    filter: blur(20px);
     animation: pulseGlow 5s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
 @keyframes pulseGlow {
@@ -431,26 +433,9 @@ section { position: relative; z-index: 2; }
     to   { transform: scale(1.08); opacity: 1; }
 }
 
-.photo-border {
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, var(--neon), var(--purple), var(--neon));
-    animation: spin 10s linear infinite;
-    box-shadow:
-        0 0 30px rgba(56, 189, 248, 0.3),
-        0 0 60px rgba(168, 85, 247, 0.15);
-}
-
-@keyframes spin { to { transform: rotate(360deg); } }
-
+.photo-border,
 .photo-border-mask {
-    position: absolute;
-    inset: 3px;
-    border-radius: 50%;
-    background: rgba(14, 20, 32, 0.92);
-    backdrop-filter: blur(20px);
-    z-index: 1;
+    display: none;
 }
 
 .photo-inner {
@@ -458,38 +443,46 @@ section { position: relative; z-index: 2; }
     z-index: 2;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 16px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(145deg,
-        rgba(255, 255, 255, 0.03),
-        rgba(255, 255, 255, 0.01));
-    border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow:
-        inset 4px 4px 10px rgba(255, 255, 255, 0.03),
-        inset -6px -6px 12px rgba(0, 0, 0, 0.35),
-        0 20px 40px rgba(0, 0, 0, 0.45);
-    transition: transform 0.08s ease, box-shadow 0.3s ease;
+        0 0 0 1px rgba(56, 189, 248, 0.25),
+        0 0 20px rgba(56, 189, 248, 0.4),
+        0 0 50px rgba(56, 189, 248, 0.2),
+        0 0 90px rgba(56, 189, 248, 0.08),
+        0 20px 40px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: box-shadow 0.3s ease;
 }
 
 .hero-photo-wrap:hover .photo-inner {
     box-shadow:
-        inset 4px 4px 12px rgba(255, 255, 255, 0.05),
-        inset -8px -8px 18px rgba(0, 0, 0, 0.45),
-        0 0 30px rgba(56, 189, 248, 0.18);
+        0 0 0 1px rgba(56, 189, 248, 0.4),
+        0 0 25px rgba(56, 189, 248, 0.6),
+        0 0 60px rgba(56, 189, 248, 0.3),
+        0 0 110px rgba(56, 189, 248, 0.12),
+        0 25px 50px rgba(0, 0, 0, 0.7);
 }
 
 .photo-inner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .photo-placeholder {
-    font-size: 5rem;
-    opacity: 0.8;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ── Reveal animation ── */
@@ -861,7 +854,7 @@ footer {
 
     #hero { padding: 0 1.5rem; }
     .hero-inner { flex-direction: column; gap: 3rem; padding-top: 6rem; }
-    .hero-photo-wrap { width: 200px; height: 200px; }
+    .hero-photo-wrap { width: 200px; height: 200px; perspective: 600px; }
 
     #about { padding: 5rem 1.5rem; }
     .about-inner { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; }
@@ -1248,11 +1241,12 @@ footer {
     border-color: rgba(56, 189, 248, 0.25);
     background: rgba(56, 189, 248, 0.04);
     transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
 }
 
 .mission-card-icon {
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1517,3 +1511,23 @@ footer {
 }
 
 .volume-icon:hover { opacity: 0.7; }
+
+/* Canvas background hero section */
+#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+#bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.35;  /* darker — lower this more if still too bright */
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;  /* sits above the canvas */
+}
