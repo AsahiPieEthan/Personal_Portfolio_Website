@@ -1297,7 +1297,7 @@ footer {
 .warp {
   animation: warp linear both;
   animation-timeline: view();
-  animation-range: entry 13% cover 60%;
+  animation-range: entry 20% cover 50%;
 }
 
 /* Keyframes */
