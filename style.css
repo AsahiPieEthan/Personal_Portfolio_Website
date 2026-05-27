@@ -570,9 +570,9 @@ section { position: relative; z-index: 2; }
 }
 
 .about-tag {
-    font-size: 0.72rem;
+    font-size: 0.79rem;
     letter-spacing: 0.07em;
-    padding: 0.35rem 0.85rem;
+    padding: 0.39rem 0.85rem;
     border-radius: 100px;
     border: 1px solid var(--border);
     color: var(--muted2);
