@@ -1,0 +1,75 @@
+.project-gallery {
+  --orbit-radius: clamp(180px, 29vw, 310px);
+  --panel-width: clamp(170px, 24vw, 250px);
+  --panel-height: clamp(210px, 29vw, 290px);
+  position: relative;
+  border: 1px solid rgba(56, 189, 248, .16);
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 50% 22%, #171334 0%, #080d19 52%, #06080f 100%);
+  overflow: hidden;
+  color: var(--white);
+  isolation: isolate;
+}
+.gallery-topline { display: flex; justify-content: space-between; gap: 12px; padding: 25px 28px 0; color: #9aadc3; font-size: .62rem; letter-spacing: .16em; }
+.gallery-scene { height: 470px; position: relative; perspective: 1000px; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.gallery-scene.is-dragging, .gallery-scene.is-dragging .gallery-panel { cursor: grabbing; }
+.gallery-halo { position: absolute; width: 70%; height: 75%; left: 15%; top: 0; background: radial-gradient(ellipse, rgba(91, 57, 210, .2), transparent 65%); pointer-events: none; }
+.gallery-floor {
+  position: absolute;
+  inset: 60% -40% -45%;
+  background: repeating-radial-gradient(ellipse at 50% 0%, transparent 0 30px, rgba(56, 189, 248, .065) 31px 32px, transparent 33px 60px);
+  transform: rotateX(60deg);
+  pointer-events: none;
+  opacity: .65;
+  mask-image: linear-gradient(transparent, #000 20%, transparent 85%);
+}
+.gallery-orbit { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; }
+.gallery-panel {
+  position: absolute;
+  left: 50%; top: 43%;
+  width: var(--panel-width); height: var(--panel-height);
+  padding: 0; border: 0; background: transparent; color: var(--white); font: inherit; text-align: left;
+  cursor: pointer; pointer-events: auto;
+  transform: translate(-50%, -50%) translateX(calc(var(--orbit-x) * var(--orbit-radius))) translateZ(calc(var(--orbit-z) * var(--orbit-radius))) rotateY(var(--panel-yaw));
+  opacity: var(--panel-opacity);
+  transform-style: preserve-3d;
+}
+.gallery-panel-number { position: absolute; bottom: calc(100% + 14px); left: 0; width: 100%; font-size: .58rem; letter-spacing: .08em; color: #b9c8dd; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gallery-artwork { position: relative; width: 100%; height: var(--panel-height); border-radius: 10px; overflow: hidden; border: 1px solid rgba(56, 189, 248, .45); background: #101b2d; box-shadow: 0 0 24px rgba(56, 189, 248, .13), inset 0 0 20px rgba(56, 189, 248, .08); }
+.gallery-artwork-purple { border-color: rgba(168, 85, 247, .5); }
+.is-active > .gallery-artwork { box-shadow: 0 0 35px rgba(56, 189, 248, .23); }
+.gallery-artwork img { width: 100%; height: 100%; object-fit: cover; object-position: top center; pointer-events: none; }
+.gallery-panel-caption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; align-items: end; gap: 12px; padding: 45px 16px 18px; background: linear-gradient(transparent, rgba(6, 8, 15, .95)); font-size: .76rem; line-height: 1.5; color: #edf6ff; }
+.gallery-reflection { position: absolute; top: calc(100% + 8px); left: 0; width: 100%; height: var(--panel-height); opacity: .3; pointer-events: none; mask-image: linear-gradient(#000, transparent 65%); filter: blur(1px); }
+.gallery-reflection .gallery-artwork { transform: scaleY(-1); }
+.gallery-placeholder { height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; background: repeating-linear-gradient(45deg, transparent 0 24px, #a855f710 25px 26px), radial-gradient(ellipse at top, #5b2782, #11132c 75%); }
+.gallery-placeholder > span { font-size: 4rem; font-weight: 700; color: #e8ceff; text-shadow: 0 0 30px #a855f7; }
+.gallery-placeholder small { font-size: .5rem; letter-spacing: .12em; }
+.gallery-controls { position: relative; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 0 20px; }
+.gallery-arrow { width: 44px; height: 44px; border: 1px solid #38bdf83d; border-radius: 50%; background: #ffffff05; color: #c7eaff; font-size: 1.2rem; cursor: pointer; }
+.gallery-arrow:hover { background: #38bdf819; border-color: var(--neon); }
+.gallery-autoplay { display: block; margin: 12px auto 0; padding: 8px 12px; border: 0; border-radius: 6px; background: transparent; color: #a1aeca; font: inherit; font-size: .7rem; cursor: pointer; }
+.gallery-autoplay:hover { color: var(--neon); background: #38bdf810; }
+.gallery-pagination { display: flex; align-items: center; }
+.gallery-pagination button { width: 36px; height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+.gallery-pagination span { width: 6px; height: 6px; border-radius: 10px; background: #586079; transition: width .2s, background .2s; }
+.gallery-pagination [aria-current="true"] span { width: 22px; background: var(--neon); box-shadow: 0 0 12px #38bdf85c; }
+.gallery-details { position: relative; text-align: center; padding: 24px 28px 12px; max-width: 650px; margin: auto; min-height: 290px; }
+.gallery-counter { color: #a1aeca; font-size: .65rem; line-height: 1.6; letter-spacing: .1em; }
+.gallery-details h3 { margin: 12px 0; font-size: clamp(1.35rem, 3vw, 1.85rem); color: #edf6ff; }
+.gallery-description { color: #a9b6ca; font-size: .88rem; line-height: 1.85; min-height: 3.7em; margin-bottom: 18px; }
+.gallery-details .project-meta { justify-content: center; }
+.gallery-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 22px; }
+.gallery-unavailable { padding: 12px; color: #a1aeca; font-size: .8rem; }
+.gallery-help { text-align: center; color: #95a4bc; font-size: .66rem; line-height: 1.7; padding: 10px 20px 24px; }
+.project-gallery :focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
+.gallery-scene:focus-visible { outline-offset: -6px; border-radius: 12px; }
+@media (max-width: 600px) {
+  .project-gallery { --orbit-radius: 175px; --panel-width: 170px; --panel-height: 220px; border-radius: 16px; }
+  .gallery-topline { padding: 20px 16px 0; font-size: .5rem; letter-spacing: .08em; }
+  .gallery-topline span:last-child { display: none; }
+  .gallery-scene { height: 365px; perspective: 800px; }
+  .gallery-details { padding: 22px 18px 10px; min-height: 330px; }
+  .gallery-description { font-size: .83rem; }
+}
+@media (prefers-reduced-motion: reduce) { .gallery-pagination span { transition: none; } }

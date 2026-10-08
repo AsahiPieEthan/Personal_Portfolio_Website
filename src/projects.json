@@ -1,0 +1,61 @@
+[
+  {
+    "id": "project-1",
+    "title": "Gym Management System",
+    "label": "Gym Management System/ Gym API",
+    "description": "A comprehensive gym management system built with C# and JavaScript, featuring member management, class scheduling, and inventory tracking.",
+    "tags": [
+      "C#",
+      "Javascript",
+      "SSMS",
+      "HTML",
+      "CSS"
+    ],
+    "liveUrl": "#",
+    "repoUrl": "https://github.com/AsahiPieEthan/GMS_IT_Project_II",
+    "purple": false
+  },
+  {
+    "id": "project-2",
+    "title": "Restaurant Website",
+    "label": "Restaurant Website",
+    "description": "A modern restaurant website with online ordering, menu management, and reservation system. Built with a focus on user experience and responsive design.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "liveUrl": "https://hq-white-coffee.vercel.app",
+    "repoUrl": "https://github.com/AsahiPieEthan/HQ_White_Coffee-",
+    "purple": true
+  },
+  {
+    "id": "project-3",
+    "title": "Frieren Website",
+    "label": "Frieren Website",
+    "description": "A fan-made website for the anime \"Frieren: Beyond Journey's End\" with character information, episode guides, and community discussions.",
+    "tags": [
+      "React Native",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "liveUrl": "https://frieren-website-personal.vercel.app",
+    "repoUrl": "https://github.com/AsahiPieEthan/Frieren-Website-",
+    "purple": false
+  },
+  {
+    "id": "project-4",
+    "title": "DocuMind",
+    "label": "AI Tool",
+    "description": "An AI-powered document summariser and Q&A tool. Upload any PDF and ask questions in plain English. Built with RAG and vector search under the hood.",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "OpenAI"
+    ],
+    "liveUrl": "#",
+    "repoUrl": "#",
+    "purple": true
+  }
+]

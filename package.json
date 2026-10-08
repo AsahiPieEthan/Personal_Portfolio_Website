@@ -1,0 +1,31 @@
+{
+  "name": "personal-portfolio-web",
+  "version": "1.0.0",
+  "description": "A responsive personal portfolio website built using **HTML**, **CSS**, and **JavaScript** to showcase my skills, projects, and background as a developer.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsahiPieEthan/Personal_Portfolio_Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AsahiPieEthan/Personal_Portfolio_Website/issues"
+  },
+  "homepage": "https://github.com/AsahiPieEthan/Personal_Portfolio_Website#readme",
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
+  }
+}
