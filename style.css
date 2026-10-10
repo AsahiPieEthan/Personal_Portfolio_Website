@@ -1,13 +1,14 @@
 :root {
-    --black: #06080f;
-    --dark: #0B1120;
-    --surface: #0e1420;
-    --border: rgba(255, 255, 255, 0.06);
+    --black: #080d16;
+    --dark: #101827;
+    --surface: #182338;
+    --surface-hover: #1d2c43;
+    --border: rgba(179, 198, 224, 0.16);
     --neon: #38BDF8;
-    --purple: #A855F7;
-    --white: #dde6f0;
-    --muted: #4a5568;
-    --muted2: #6b7280;
+    --purple: #c084fc;
+    --white: #f1f5f9;
+    --muted: #94a3b8;
+    --muted2: #b6c2d2;
 }
 
 *,
@@ -102,7 +103,7 @@ body {
     background: var(--black);
     color: var(--white);
     font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     overflow-x: hidden;
 }
 
@@ -320,9 +321,9 @@ section { position: relative; z-index: 2; }
 }
 
 .hero-bio {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--muted2);
-    line-height: 1.85;
+    line-height: 1.8;
     max-width: 400px;
     margin-bottom: 2.4rem;
 }
@@ -516,6 +517,7 @@ section { position: relative; z-index: 2; }
 /* ── About ── */
 #about {
     padding: 7rem 4rem;
+    background: var(--dark);
 }
 
 .about-inner {
@@ -551,9 +553,9 @@ section { position: relative; z-index: 2; }
 }
 
 .about-body p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--muted2);
-    line-height: 1.9;
+    line-height: 1.8;
     margin-bottom: 1rem;
 }
 
@@ -708,9 +710,9 @@ section { position: relative; z-index: 2; }
 }
 
 .contact-sub {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--muted2);
-    line-height: 1.85;
+    line-height: 1.8;
     max-width: 480px;
 }
 
@@ -727,20 +729,20 @@ section { position: relative; z-index: 2; }
     padding: 1.3rem 1.5rem;
     border-radius: 10px;
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.018);
+    background: var(--surface);
     text-decoration: none;
     transition: border-color .25s, background .25s, transform .25s;
 }
 
 .contact-card:hover {
     border-color: rgba(56, 189, 248, 0.3);
-    background: rgba(56, 189, 248, 0.04);
+    background: var(--surface-hover);
     transform: translateY(-2px);
 }
 
 .contact-card.purple-hover:hover {
     border-color: rgba(168, 85, 247, 0.3);
-    background: rgba(168, 85, 247, 0.04);
+    background: var(--surface-hover);
 }
 
 .contact-card-icon {
@@ -903,7 +905,7 @@ footer {
 }
 
 .projects-sub {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--muted2);
     line-height: 1.8;
 }
@@ -1209,9 +1211,9 @@ footer {
 }
 
 .mission-left p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--muted2);
-    line-height: 1.9;
+    line-height: 1.8;
     margin-bottom: 1rem;
 }
 
@@ -1233,13 +1235,13 @@ footer {
     padding: 1.3rem 1.5rem;
     border-radius: 10px;
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.018);
+    background: var(--surface);
     transition: border-color .25s, background .25s, transform .25s;
 }
 
 .mission-card:hover {
     border-color: rgba(56, 189, 248, 0.25);
-    background: rgba(56, 189, 248, 0.04);
+    background: var(--surface-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
 }

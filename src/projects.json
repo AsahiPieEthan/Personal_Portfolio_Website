@@ -3,10 +3,10 @@
     "id": "project-1",
     "title": "Gym Management System",
     "label": "Gym Management System/ Gym API",
-    "description": "A comprehensive gym management system built with C# and JavaScript, featuring member management, class scheduling, and inventory tracking.",
+    "description": "A gym management application built with C# and JavaScript. It brings member management, class scheduling, and inventory tracking into one system.",
     "tags": [
       "C#",
-      "Javascript",
+      "JavaScript",
       "SSMS",
       "HTML",
       "CSS"
@@ -19,7 +19,7 @@
     "id": "project-2",
     "title": "Restaurant Website",
     "label": "Restaurant Website",
-    "description": "A modern restaurant website with online ordering, menu management, and reservation system. Built with a focus on user experience and responsive design.",
+    "description": "A responsive restaurant website built with HTML, CSS, and JavaScript, with online ordering, menu management, and reservations.",
     "tags": [
       "HTML",
       "CSS",
@@ -33,7 +33,7 @@
     "id": "project-3",
     "title": "Frieren Website",
     "label": "Frieren Website",
-    "description": "A fan-made website for the anime \"Frieren: Beyond Journey's End\" with character information, episode guides, and community discussions.",
+    "description": "A fan website for Frieren: Beyond Journey's End, bringing character information, episode guides, and community discussions together.",
     "tags": [
       "React Native",
       "HTML",
@@ -48,7 +48,7 @@
     "id": "project-4",
     "title": "DocuMind",
     "label": "AI Tool",
-    "description": "An AI-powered document summariser and Q&A tool. Upload any PDF and ask questions in plain English. Built with RAG and vector search under the hood.",
+    "description": "A document summarisation and Q&A tool built with Python and FastAPI. It uses retrieval-augmented generation (RAG) and vector search to answer questions about uploaded PDFs.",
     "tags": [
       "Python",
       "FastAPI",

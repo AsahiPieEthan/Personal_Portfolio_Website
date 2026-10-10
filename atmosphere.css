@@ -1,0 +1,134 @@
+/* Static lighting: adjust these two values to change the atmosphere's strength. */
+:root {
+    --ambient-blue: rgba(56, 189, 248, 0.16);
+    --ambient-violet: rgba(139, 92, 246, 0.17);
+}
+
+/* Each section fades back to the same navy at its edges. */
+#hero {
+    background:
+        radial-gradient(ellipse 46% 57% at 78% 42%, var(--ambient-blue), transparent 78%),
+        radial-gradient(ellipse 42% 45% at 94% 65%, var(--ambient-violet), transparent 80%),
+        radial-gradient(ellipse 55% 45% at 8% 8%, rgba(64, 91, 174, 0.10), transparent 80%),
+        var(--black);
+}
+
+#about {
+    background:
+        radial-gradient(ellipse 38% 58% at 0% 50%, rgba(56, 189, 248, 0.07), transparent 85%),
+        radial-gradient(ellipse 42% 60% at 100% 52%, rgba(139, 92, 246, 0.10), transparent 85%),
+        linear-gradient(var(--black), var(--dark) 22%, var(--dark) 75%, var(--black));
+}
+
+#projects {
+    background:
+        radial-gradient(ellipse 42% 44% at 4% 49%, rgba(56, 189, 248, 0.10), transparent 85%),
+        radial-gradient(ellipse 48% 45% at 100% 55%, rgba(139, 92, 246, 0.14), transparent 85%),
+        var(--black);
+}
+
+#mission {
+    background:
+        radial-gradient(ellipse 45% 62% at 98% 48%, rgba(92, 100, 212, 0.12), transparent 85%),
+        linear-gradient(var(--black), rgba(16, 24, 39, 0.65) 48%, var(--black));
+}
+
+#contact {
+    background:
+        radial-gradient(ellipse 54% 46% at 50% 78%, rgba(56, 189, 248, 0.08), transparent 85%),
+        radial-gradient(ellipse 35% 50% at 0% 50%, rgba(139, 92, 246, 0.07), transparent 85%),
+        var(--black);
+}
+
+/* A small repeating texture sits beneath content and never captures input. */
+section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url('./atmosphere-grain.svg') repeat;
+    opacity: 0.035;
+    pointer-events: none;
+}
+
+/* Sparse, stationary points of light stay around the hero's outer edges. */
+#hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 65% 16%, #bfe9ff99 0 1px, transparent 2px),
+        radial-gradient(circle at 91% 23%, #bfe9ff88 0 1px, transparent 2px),
+        radial-gradient(circle at 83% 12%, #e2d4ff66 0 1px, transparent 2px),
+        radial-gradient(circle at 96% 49%, #bfe9ff66 0 1px, transparent 2px),
+        radial-gradient(circle at 62% 76%, #bfe9ff77 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 85%, #e2d4ff77 0 1px, transparent 2px),
+        radial-gradient(circle at 5% 67%, #bfe9ff55 0 1px, transparent 2px),
+        radial-gradient(circle at 15% 16%, #bfe9ff55 0 1px, transparent 2px);
+}
+
+/* Let the ambient light lead; keep the existing canvas in the distance. */
+#bg {
+    opacity: 0.10;
+    pointer-events: none;
+    mask-image: linear-gradient(90deg, transparent 15%, #000 65%, transparent);
+}
+
+.photo-glow {
+    inset: -110px;
+    background: radial-gradient(ellipse, rgba(56, 189, 248, 0.20), rgba(139, 92, 246, 0.10) 45%, transparent 72%);
+    filter: blur(12px);
+    animation: none;
+}
+
+.hero-photo-wrap::before,
+.hero-photo-wrap::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(147, 197, 253, 0.13);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: rotate(-28deg);
+}
+
+.hero-photo-wrap::before {
+    inset: -42px -75px;
+    box-shadow: 0 -12px 55px -30px rgba(147, 197, 253, 0.45);
+}
+
+.hero-photo-wrap::after {
+    inset: -74px -110px;
+    border-color: rgba(192, 132, 252, 0.07);
+}
+
+.divider {
+    background: linear-gradient(90deg, transparent, rgba(125, 184, 228, 0.25) 28%, rgba(192, 132, 252, 0.18) 72%, transparent);
+}
+
+/* Carry the surrounding light into the gallery without brightening its floor. */
+#projects .project-gallery {
+    border-color: rgba(125, 184, 228, 0.22);
+    box-shadow: 0 28px 90px -48px rgba(56, 189, 248, 0.30), 0 -22px 80px -55px rgba(139, 92, 246, 0.40);
+}
+
+@media (max-width: 768px) {
+    #hero {
+        background:
+            radial-gradient(ellipse 80% 36% at 66% 77%, var(--ambient-blue), transparent 80%),
+            radial-gradient(ellipse 70% 35% at 100% 72%, var(--ambient-violet), transparent 85%),
+            var(--black);
+    }
+    .hero-photo-wrap::before { inset: -25px -35px; }
+    .hero-photo-wrap::after { inset: -45px -55px; }
+    .photo-glow { inset: -60px; }
+}
+
+@media (forced-colors: active) {
+    section::before,
+    #hero::after,
+    .hero-photo-wrap::before,
+    .hero-photo-wrap::after,
+    .photo-glow { display: none; }
+}

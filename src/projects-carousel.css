@@ -10,7 +10,7 @@
   color: var(--white);
   isolation: isolate;
 }
-.gallery-topline { display: flex; justify-content: space-between; gap: 12px; padding: 25px 28px 0; color: #9aadc3; font-size: .62rem; letter-spacing: .16em; }
+.gallery-topline { display: flex; justify-content: space-between; gap: 12px; padding: 25px 28px 0; color: var(--muted); font-size: .62rem; letter-spacing: .16em; }
 .gallery-scene { height: 470px; position: relative; perspective: 1000px; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .gallery-scene.is-dragging, .gallery-scene.is-dragging .gallery-panel { cursor: grabbing; }
 .gallery-halo { position: absolute; width: 70%; height: 75%; left: 15%; top: 0; background: radial-gradient(ellipse, rgba(91, 57, 210, .2), transparent 65%); pointer-events: none; }
@@ -39,7 +39,7 @@
 .gallery-artwork-purple { border-color: rgba(168, 85, 247, .5); }
 .is-active > .gallery-artwork { box-shadow: 0 0 35px rgba(56, 189, 248, .23); }
 .gallery-artwork img { width: 100%; height: 100%; object-fit: cover; object-position: top center; pointer-events: none; }
-.gallery-panel-caption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; align-items: end; gap: 12px; padding: 45px 16px 18px; background: linear-gradient(transparent, rgba(6, 8, 15, .95)); font-size: .76rem; line-height: 1.5; color: #edf6ff; }
+.gallery-panel-caption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; align-items: end; gap: 12px; padding: 45px 16px 18px; background: linear-gradient(transparent, rgba(6, 8, 15, .95)); font-size: .76rem; line-height: 1.5; color: var(--white); }
 .gallery-reflection { position: absolute; top: calc(100% + 8px); left: 0; width: 100%; height: var(--panel-height); opacity: .3; pointer-events: none; mask-image: linear-gradient(#000, transparent 65%); filter: blur(1px); }
 .gallery-reflection .gallery-artwork { transform: scaleY(-1); }
 .gallery-placeholder { height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; background: repeating-linear-gradient(45deg, transparent 0 24px, #a855f710 25px 26px), radial-gradient(ellipse at top, #5b2782, #11132c 75%); }
@@ -48,20 +48,34 @@
 .gallery-controls { position: relative; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 0 20px; }
 .gallery-arrow { width: 44px; height: 44px; border: 1px solid #38bdf83d; border-radius: 50%; background: #ffffff05; color: #c7eaff; font-size: 1.2rem; cursor: pointer; }
 .gallery-arrow:hover { background: #38bdf819; border-color: var(--neon); }
-.gallery-autoplay { display: block; margin: 12px auto 0; padding: 8px 12px; border: 0; border-radius: 6px; background: transparent; color: #a1aeca; font: inherit; font-size: .7rem; cursor: pointer; }
+.gallery-autoplay { display: block; margin: 12px auto 0; padding: 8px 12px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font: inherit; font-size: .7rem; cursor: pointer; }
 .gallery-autoplay:hover { color: var(--neon); background: #38bdf810; }
 .gallery-pagination { display: flex; align-items: center; }
 .gallery-pagination button { width: 36px; height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
 .gallery-pagination span { width: 6px; height: 6px; border-radius: 10px; background: #586079; transition: width .2s, background .2s; }
 .gallery-pagination [aria-current="true"] span { width: 22px; background: var(--neon); box-shadow: 0 0 12px #38bdf85c; }
 .gallery-details { position: relative; text-align: center; padding: 24px 28px 12px; max-width: 650px; margin: auto; min-height: 290px; }
-.gallery-counter { color: #a1aeca; font-size: .65rem; line-height: 1.6; letter-spacing: .1em; }
-.gallery-details h3 { margin: 12px 0; font-size: clamp(1.35rem, 3vw, 1.85rem); color: #edf6ff; }
-.gallery-description { color: #a9b6ca; font-size: .88rem; line-height: 1.85; min-height: 3.7em; margin-bottom: 18px; }
+.gallery-counter { color: var(--muted); font-size: .65rem; line-height: 1.6; letter-spacing: .1em; }
+.gallery-details h3 { margin: 12px 0; font-size: clamp(1.35rem, 3vw, 1.85rem); color: var(--white); }
+.gallery-description { color: var(--muted2); font-size: .88rem; line-height: 1.85; min-height: 3.7em; margin-bottom: 18px; }
 .gallery-details .project-meta { justify-content: center; }
 .gallery-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 22px; }
-.gallery-unavailable { padding: 12px; color: #a1aeca; font-size: .8rem; }
-.gallery-help { text-align: center; color: #95a4bc; font-size: .66rem; line-height: 1.7; padding: 10px 20px 24px; }
+
+/* Repository link: animate both entering and leaving hover/focus. */
+.gallery-links .btn-solid {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-links .btn-solid:hover,
+.gallery-links .btn-solid:focus-visible {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.45),
+    0 0 30px rgba(56, 189, 248, 0.25);
+}
+
+.gallery-unavailable { padding: 12px; color: var(--muted); font-size: .8rem; }
+.gallery-help { text-align: center; color: var(--muted); font-size: .66rem; line-height: 1.7; padding: 10px 20px 24px; }
 .project-gallery :focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
 .gallery-scene:focus-visible { outline-offset: -6px; border-radius: 12px; }
 @media (max-width: 600px) {
@@ -72,4 +86,52 @@
   .gallery-details { padding: 22px 18px 10px; min-height: 330px; }
   .gallery-description { font-size: .83rem; }
 }
-@media (prefers-reduced-motion: reduce) { .gallery-pagination span { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .gallery-pagination span,
+  .gallery-links .btn-solid { transition: none; }
+
+  .gallery-links .btn-solid:hover,
+  .gallery-links .btn-solid:focus-visible { transform: none; }
+}
+
+/* 1. Prepare the card and its artwork for smooth changes. */
+.gallery-panel {
+    translate: 0 0;
+    transition: translate 0.25s ease;
+}
+
+.gallery-panel > .gallery-artwork {
+    transition:
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* 2. Move the card right when hovered or keyboard-focused.
+   Pause this effect while someone is dragging the carousel. */
+.gallery-scene:not(.is-dragging)
+.gallery-panel:is(:hover, :focus-visible) {
+    translate: 0 -5px;
+}
+
+/* 3. Add a brighter border and cyan glow to the artwork. */
+.gallery-scene:not(.is-dragging)
+.gallery-panel:is(:hover, :focus-visible) > .gallery-artwork {
+    border-color: var(--neon);
+
+    box-shadow:
+        0 0 20px rgba(56, 189, 248, 0.45),
+        0 0 45px rgba(56, 189, 248, 0.25);
+}
+
+/* 4. Keep the glow but remove movement for reduced-motion users. */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-panel,
+    .gallery-panel > .gallery-artwork {
+        transition: none;
+    }
+
+    .gallery-scene:not(.is-dragging)
+    .gallery-panel:is(:hover, :focus-visible) {
+        translate: none;
+    }
+}
